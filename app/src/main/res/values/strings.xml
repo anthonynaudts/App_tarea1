@@ -11,10 +11,17 @@
     <string name="loading_message">Cargando</string>
     <string name="error_message">Hubo un error. Por favor intenta nuevamente.</string>
 
-    <string name="username">Username</string> <!-- Esta es la cadena que falta -->
+    <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="bienvenido_a_la_pantalla_de_inicio">¡Bienvenido a la pantalla de inicio!</string>
     <string name="crear_nuevo_usuario">Crear Nuevo Usuario</string>
+    <string name="crear_usuario">Crear Usuario</string>
+    <string name="atr_s">Atrás</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="nombre">Nombre</string>
+    <string name="salir">Salir</string>
+    <string name="crear_usuario1">Crear Usuario</string>
+    <string name="salir1">Salir</string>
 
 </resources>

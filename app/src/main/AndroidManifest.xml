@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         tools:targetApi="31">
 
-        <!-- Actividad de inicio de sesión que será la principal -->
+
         <activity
             android:name=".ui.LoginActivity"
             android:exported="true"
@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
 
-        <!-- Otras actividades (en este caso MainActivity) -->
+
         <activity android:name=".MainActivity" android:exported="true" />
         <activity android:name=".ui.InicioActivity" android:exported="true" />
         <activity android:name=".ui.CrearUsuarioActivity" android:exported="true" />

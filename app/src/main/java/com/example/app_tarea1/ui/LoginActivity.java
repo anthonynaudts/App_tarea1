@@ -30,27 +30,23 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Inicializar vistas
+
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
         tvErrorMessage = findViewById(R.id.tvErrorMessage);
 
-        // Configurar botón de login
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Obtener datos de usuario y contraseña
                 String username = etUsername.getText().toString().trim();
                 String password = etPassword.getText().toString().trim();
 
-                // Validar usuario y contraseña no vacíos
                 if (username.isEmpty() || password.isEmpty()) {
                     tvErrorMessage.setText("Por favor ingrese usuario y contraseña");
                     return;
                 }
 
-                // Llamar a la API para login
                 ApiService apiService = RetrofitClient.getInstance().create(ApiService.class);
                 Call<ApiResponse> call = apiService.login(new Usuario(username, password));
 
@@ -58,15 +54,12 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
                         if (response.isSuccessful()) {
-                            // Si el login es exitoso, mostrar mensaje y redirigir
                             ApiResponse apiResponse = response.body();
                             Log.d("Login", "Usuario autenticado: " + apiResponse.toString());
 
-                            // Redirigir a la actividad de inicio
                             Intent intent = new Intent(LoginActivity.this, InicioActivity.class);
                             startActivity(intent);
                         } else {
-                            // Si la respuesta es un error, mostrar mensaje
                             Log.e("Login", "Error de autenticación: " + response.message());
                             tvErrorMessage.setText("Usuario o contraseña incorrectos");
                         }

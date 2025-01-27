@@ -8,7 +8,6 @@ public class LoginViewModel extends ViewModel {
 
     private final MutableLiveData<Boolean> loginStatus = new MutableLiveData<>();
 
-    // Método para simular el inicio de sesión
     public void login(String username, String password) {
         if ("admin".equals(username) && "password".equals(password)) {
             loginStatus.setValue(true); // Usuario autenticado correctamente
@@ -17,7 +16,6 @@ public class LoginViewModel extends ViewModel {
         }
     }
 
-    // Método para observar el estado del inicio de sesión
     public LiveData<Boolean> getLoginStatus() {
         return loginStatus;
     }
